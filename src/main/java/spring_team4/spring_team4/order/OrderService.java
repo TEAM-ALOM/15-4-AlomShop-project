@@ -12,6 +12,7 @@ import spring_team4.spring_team4.user.User;
 import spring_team4.spring_team4.user.UserRepository;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -49,6 +50,17 @@ public class OrderService {
                 .orElseThrow(() -> new IllegalArgumentException("주문 내역 없음"));
 
         return OrderResponse.from(order);
+    }
+
+    public List<OrderResponse> searchOrders(OrderRequest request) {
+        List<Order> orders = orderRepository.findByConditions(
+                request.getUserId(),
+                request.getProductId(),
+                request.getOrderDate()
+        );
+        return orders.stream()
+                .map(OrderResponse::from)
+                .collect(Collectors.toList());
     }
 
     @Transactional

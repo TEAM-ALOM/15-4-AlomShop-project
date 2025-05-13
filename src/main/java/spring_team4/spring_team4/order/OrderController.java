@@ -32,6 +32,12 @@ public class OrderController {
         return orderService.getOrder(orderId);
     }
 
+    @Operation(summary = "여러 조건으로 주문 검색 (AND)")
+    @GetMapping("/search")
+    public List<OrderResponse> searchOrders(@ModelAttribute OrderRequest request) {
+        return orderService.searchOrders(request);
+    }
+
     @Operation(summary = "주문 취소")
     @DeleteMapping("/{orderId}")
     public String deleteOrder(@PathVariable Long orderId) {
@@ -39,5 +45,5 @@ public class OrderController {
         return "주문 취소 완료";
     }
 
-
+    ///api/order?order_id=1&order_date=2024-10-29&user_id=arom&product_id=1
 }
