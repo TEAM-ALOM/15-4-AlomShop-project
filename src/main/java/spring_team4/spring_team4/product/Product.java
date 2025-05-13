@@ -14,4 +14,8 @@ public class Product {
 
     private Long category_id;
     private String product_name;
+
 }
+
+
+
