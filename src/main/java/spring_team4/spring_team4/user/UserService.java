@@ -23,7 +23,7 @@ public class UserService {
         .orElseThrow(() -> new RuntimeException("user not found"));
 
     UserResponse userResponse = new UserResponse();
-    userResponse.setUser_id(user.getUser_id());
+    userResponse.setUserId(user.getUserId());
     userResponse.setUsername(user.getUsername());
     userResponse.setEmail(user.getEmail());
 
@@ -36,7 +36,7 @@ public class UserService {
     user1.setEmail(dto.getEmail());
     userRepository.save(user1);
     UserResponse createResponse = new UserResponse();
-    createResponse.setUser_id(user1.getUser_id());
+    createResponse.setUserId(user1.getUserId());
     createResponse.setUsername(user1.getUsername());
     createResponse.setEmail(user1.getEmail());
     return createResponse;

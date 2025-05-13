@@ -9,6 +9,6 @@ import spring_team4.spring_team4.user.dto.UserResponse;
 @Getter
 @Setter
 public class CategoryResponse {
-    private Long category_id;
-    private String category_name;
+    private Long categoryId;
+    private String categoryName;
 }

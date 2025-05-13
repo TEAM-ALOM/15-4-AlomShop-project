@@ -22,21 +22,21 @@ public class CategoryService {
                 .orElseThrow(() -> new RuntimeException("category not found"));
 
         CategoryResponse categoryResponse = new CategoryResponse();
-        categoryResponse.setCategory_id(category.getCategory_id());
-        categoryResponse.setCategory_name(category.getCategory_name());
+        categoryResponse.setCategoryId(category.getCategoryId());
+        categoryResponse.setCategoryName(category.getCategoryName());
 
         return categoryResponse;
     }
 
     public CategoryResponse createCategory(CategoryRequest dto) {
         Category category = new Category();
-        category.setCategory_name(dto.getCategory_name());
+        category.setCategoryName(dto.getCategoryName());
 
         categoryRepository.save(category);
 
         CategoryResponse categoryResponse = new CategoryResponse();
-        categoryResponse.setCategory_id(category.getCategory_id());
-        categoryResponse.setCategory_name(category.getCategory_name());
+        categoryResponse.setCategoryId(category.getCategoryId());
+        categoryResponse.setCategoryName(category.getCategoryName());
         return categoryResponse;
     }
 }

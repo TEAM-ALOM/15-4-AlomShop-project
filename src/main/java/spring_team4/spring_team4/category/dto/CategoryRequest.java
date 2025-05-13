@@ -7,5 +7,5 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CategoryRequest {
-    private String category_name;
+    private String categoryName;
 }

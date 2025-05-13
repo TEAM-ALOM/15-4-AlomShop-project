@@ -4,7 +4,7 @@ import lombok.*;
 @Getter
 @Setter
 public class ProductResponse {
-    private Long Product_id;
-    private Long Category_id;
-    private String product_name;
+    private Long ProductId;
+    private Long CategoryId;
+    private String productName;
 }
