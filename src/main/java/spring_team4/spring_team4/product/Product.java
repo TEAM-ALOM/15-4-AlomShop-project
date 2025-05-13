@@ -1,23 +1,21 @@
 package spring_team4.spring_team4.product;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.*;
+import lombok.Getter;
+
+import lombok.Setter;
+
+import jakarta.persistence.*;
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
+@Getter @Setter
 public class Product {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long product_id;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String name;
+    private Long category_id;
+    private String product_name;
 
 }
+
+
+
