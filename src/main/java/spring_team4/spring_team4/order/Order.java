@@ -22,15 +22,17 @@ public class Order {
 
     // 1 : N, N쪽이 연관관계의 주인
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
     @ManyToOne
+    @JoinColumn(name = "product_id")
     private Product product;
 
-    private LocalDateTime createdAt;
+    private LocalDateTime orderDate;
 
     @PrePersist
-    public void setCreatedAt() {
-        this.createdAt = LocalDateTime.now();
+    public void setOrderDate() {
+        this.orderDate = LocalDateTime.now();
     }
 }
