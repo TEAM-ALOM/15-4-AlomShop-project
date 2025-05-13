@@ -14,13 +14,13 @@ import java.time.LocalDateTime;
 public class OrderResponse {
     private Long orderId;
     private Long userId;
-    private LocalDateTime createdAt;
+    private LocalDateTime orderDate;
 
     public static OrderResponse from(Order order) {
         return OrderResponse.builder()                  //builder() -> DTO를 생성 (롬복의 빌더 패턴 사용, 롬복을 이용한 편리한 객체 생성 방식), return BoardResponse -> DTO 완성본을 반환
                 .orderId(order.getOrderId())
                 .userId(order.getUser().getUserId())
-                .createdAt(order.getCreatedAt())
+                .orderDate(order.getOrderDate())
                 .build();                               //최종 객체 생성
     }
 

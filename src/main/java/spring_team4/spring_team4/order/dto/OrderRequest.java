@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -13,4 +15,6 @@ import lombok.Setter;
 @Schema(description = "주문 접수 요청 DTO")
 public class OrderRequest {
     private Long userId;  // 유저 ID
+    private Long productId;
+    private LocalDateTime orderDate;
 }
