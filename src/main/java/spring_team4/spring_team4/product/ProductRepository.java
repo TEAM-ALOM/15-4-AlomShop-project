@@ -5,8 +5,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import spring_team4.spring_team4.category.Category;
-import spring_team4.spring_team4.cart.cartStandard;
+
 /*order 추가 예정*/
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
