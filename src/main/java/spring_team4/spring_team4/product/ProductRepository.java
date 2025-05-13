@@ -1,13 +1,15 @@
 package spring_team4.spring_team4.product;
 
-
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+/*order 추가 예정*/
 import spring_team4.spring_team4.category.Category;
 import spring_team4.spring_team4.cart.cartStandard;
 import spring_team4.spring_team4.order.Order;
+
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
@@ -19,3 +21,4 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     // List<Product> findByProductNameContaining(String keyword);*/
 }
+
