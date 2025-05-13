@@ -10,10 +10,10 @@ import jakarta.persistence.*;
 @Getter @Setter
 public class Product {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long product_id;
+    private Long productId;
 
-    private Long category_id;
-    private String product_name;
+    private Long categoryId;
+    private String productName;
 
 }
 
