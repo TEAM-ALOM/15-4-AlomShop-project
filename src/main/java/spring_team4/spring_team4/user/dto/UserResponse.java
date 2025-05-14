@@ -9,12 +9,18 @@ import java.util.List;
 
 @Getter
 @Setter
+@Builder
 public class UserResponse {
 
   private Long userId;
   private String email;
   private String username;
 
-
-
+  public static UserResponse from(User user) {
+    return UserResponse.builder()
+            .userId(user.getUserId())
+            .email(user.getEmail())
+            .username(user.getUsername())
+            .build();
+  }
 }
