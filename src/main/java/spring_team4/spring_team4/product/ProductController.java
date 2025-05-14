@@ -1,17 +1,11 @@
 // src/main/java/spring_team4/spring_team4/product/ProductController.java
 package spring_team4.spring_team4.product;
 
-<<<<<<< Updated upstream
 import org.springframework.beans.factory.annotation.Autowired;
-=======
->>>>>>> Stashed changes
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import spring_team4.spring_team4.category.Category;
 import spring_team4.spring_team4.category.CategoryRepository;
-
-<<<<<<< Updated upstream
-=======
 import java.util.List;
 
 >>>>>>> Stashed changes

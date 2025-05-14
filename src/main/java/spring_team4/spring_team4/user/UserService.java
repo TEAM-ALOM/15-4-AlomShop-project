@@ -20,25 +20,37 @@ public class UserService {
 
   public UserResponse getUserById(Long id) {
     User user = userRepository.findById(id)
-        .orElseThrow(() -> new RuntimeException("user not found"));
+            .orElseThrow(() -> new RuntimeException("user not found"));
 
-    UserResponse userResponse = new UserResponse();
-    userResponse.setUserId(user.getUserId());
-    userResponse.setUsername(user.getUsername());
-    userResponse.setEmail(user.getEmail());
-
-    return userResponse;
+    return UserResponse.from(user);
   }
 
   public UserResponse createUser(UserRequest dto) {
-    User user1 = new User();
-    user1.setUsername(dto.getUsername());
-    user1.setEmail(dto.getEmail());
-    userRepository.save(user1);
-    UserResponse createResponse = new UserResponse();
-    createResponse.setUserId(user1.getUserId());
-    createResponse.setUsername(user1.getUsername());
-    createResponse.setEmail(user1.getEmail());
-    return createResponse;
+    User user = User.builder()
+            .userId(dto.getUserId())
+            .email(dto.getEmail())
+            .username(dto.getUsername())
+            .build();
+
+    return UserResponse.from(
+            userRepository.save(user)
+    );
+  }
+
+  public UserResponse updateUser(UserRequest dto){
+    User user = userRepository.findById(dto.getUserId())
+            .orElseThrow(() -> new RuntimeException("user not found"));
+    user.setEmail(dto.getEmail());
+    user.setUsername(dto.getUsername());
+
+    return UserResponse.from(
+            userRepository.save(user)
+    );
+  }
+
+  public void deleteUser(Long id) {
+    User user = userRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("user not found"));
+    userRepository.delete(user);
   }
 }
